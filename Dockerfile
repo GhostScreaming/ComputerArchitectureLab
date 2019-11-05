@@ -10,7 +10,8 @@ ENV RISCV /opt/riscv/riscv-tools
 # clone riscv-gnu-toolchain git repo
 # install newlib gcc and linux gcc
 # set gcc env
-RUN apt-get install autoconf \
+RUN apt-get update && \
+    apt-get install autoconf \
                     automake \
                     autotools-dev \
                     curl \
