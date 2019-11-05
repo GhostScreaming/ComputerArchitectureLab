@@ -11,7 +11,8 @@ ENV RISCV /opt/riscv/riscv-tools
 # install newlib gcc and linux gcc
 # set gcc env
 RUN apt-get update && \
-    apt-get -y install autoconf \
+    apt-get -y install git \
+                       autoconf \
                        automake \
                        autotools-dev \
                        curl \
