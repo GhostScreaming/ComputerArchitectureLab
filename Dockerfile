@@ -1,5 +1,5 @@
 # using Ubuntu16
-FROM ubuntu16
+FROM ubuntu:16.04
 # Maintainer
 MAINTAINER Mine
 # riscv-gnu-toolchain env
