@@ -11,24 +11,24 @@ ENV RISCV /opt/riscv/riscv-tools
 # install newlib gcc and linux gcc
 # set gcc env
 RUN apt-get update && \
-    apt-get install autoconf \
-                    automake \
-                    autotools-dev \
-                    curl \
-                    libmpc-dev \
-                    libmpfr-dev \
-                    libgmp-dev \
-                    gawk \
-                    build-essential \
-                    bison \
-                    flex \
-                    texinfo \
-                    gperf \
-                    libtool \
-                    patchutils \
-                    bc \
-                    zlib1g-dev \
-                    libexpat-dev && \
+    apt-get -y install autoconf \
+                       automake \
+                       autotools-dev \
+                       curl \
+                       libmpc-dev \
+                       libmpfr-dev \
+                       libgmp-dev \
+                       gawk \
+                       build-essential \
+                       bison \
+                       flex \
+                       texinfo \
+                       gperf \
+                       libtool \
+                       patchutils \
+                       bc \
+                       zlib1g-dev \
+                       libexpat-dev && \
     git clone --recursive https://github.com/riscv/riscv-gnu-toolchain && \
     cd riscv-gnu-toolchain && \
     ./configure --prefix=$RISCV-GCC/newlib --enable-multilib && make && \
@@ -39,27 +39,27 @@ RUN apt-get update && \
 # clone riscv-tools git repo
 # install riscv-tools
 # set riscv-tools env
-RUN apt-get install autoconf \
-                    automake \
-                    autotools-dev \
-                    curl \
-                    libmpc-dev \
-                    libmpfr-dev \
-                    libgmp-dev \
-                    libusb-1.0-0-dev \
-                    gawk \
-                    build-essential \
-                    bison \
-                    flex \
-                    texinfo \
-                    gperf \
-                    libtool \
-                    patchutils \
-                    bc \
-                    zlib1g-dev \
-                    device-tree-compiler \
-                    pkg-config \
-                    libexpat-dev && \
+RUN apt-get -y install autoconf \
+                       automake \
+                       autotools-dev \
+                       curl \
+                       libmpc-dev \
+                       libmpfr-dev \
+                       libgmp-dev \
+                       libusb-1.0-0-dev \
+                       gawk \
+                       build-essential \
+                       bison \
+                       flex \
+                       texinfo \
+                       gperf \
+                       libtool \
+                       patchutils \
+                       bc \
+                       zlib1g-dev \
+                       device-tree-compiler \
+                       pkg-config \
+                       libexpat-dev && \
     git clone --recursive https://github.com/riscv/riscv-tools.git && \
     cd riscv-tools && RUN ./build.sh && \
     export PATH=$RISCV/bin:$PATH && cd -
