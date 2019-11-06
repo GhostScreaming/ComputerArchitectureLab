@@ -61,7 +61,7 @@ RUN apt-get -y install autoconf \
                        device-tree-compiler \
                        pkg-config \
                        libexpat-dev && \
-    git clone --recursive https://github.com/riscv/riscv-tools.git && \
+    git clone --recursive https://github.com/riscv/riscv-tools.git
 #    cd riscv-tools && RUN ./build.sh && \
 #    export PATH=$RISCV/bin:$PATH && cd -
                          
