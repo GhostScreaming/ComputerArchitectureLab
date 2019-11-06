@@ -30,11 +30,11 @@ RUN apt-get update && \
                        bc \
                        zlib1g-dev \
                        libexpat-dev && \
-    git clone --recursive https://github.com/riscv/riscv-gnu-toolchain && \
-    cd riscv-gnu-toolchain && \
-    ./configure --prefix=$RISCV-GCC/newlib --enable-multilib && make && \
-    ./configure --prefix=$RISCV-GCC/linux --enable-multilib && make linux && \
-    export PATH=$RISCV-GCC/newlib/bin:$RISCV-GCC/linux/bin:$PATH && cd -
+    git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
+#    cd riscv-gnu-toolchain && \
+#    ./configure --prefix=$RISCV-GCC/newlib --enable-multilib && make && \
+#    ./configure --prefix=$RISCV-GCC/linux --enable-multilib && make linux && \
+#    export PATH=$RISCV-GCC/newlib/bin:$RISCV-GCC/linux/bin:$PATH && cd -
 
 # install riscv-tools prerequisites
 # clone riscv-tools git repo
@@ -62,6 +62,6 @@ RUN apt-get -y install autoconf \
                        pkg-config \
                        libexpat-dev && \
     git clone --recursive https://github.com/riscv/riscv-tools.git && \
-    cd riscv-tools && RUN ./build.sh && \
-    export PATH=$RISCV/bin:$PATH && cd -
+#    cd riscv-tools && RUN ./build.sh && \
+#    export PATH=$RISCV/bin:$PATH && cd -
                          
